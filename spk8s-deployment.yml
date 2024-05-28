@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spk8s
+spec:
+  selector:
+    matchLabels:
+      app: spk8s
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: spk8s
+    spec:
+      containers:
+        - name: spk8s
+          image: spk8s:1.1
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080

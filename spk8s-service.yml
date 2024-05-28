@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: spk8s
+spec:
+  selector:
+    app: spk8s
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080 # The targetPort should match the containerPort in the deployment
+  type: NodePort
